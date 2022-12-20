@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import UseData from '../hooks/UseData';
 import { FacturaGetDto } from '../common/dtos/FacturaGetDto';
 import TableRow from './TableRow';
