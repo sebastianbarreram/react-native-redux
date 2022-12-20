@@ -3,6 +3,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMessage } from '../redux/slices/MessageSlice';
 import { Users } from '../components/Users';
+import Factura from '../components/Factura';
 
 export const MainScreen = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,8 @@ export const MainScreen = () => {
       <Text>{mensaje}</Text>
       <Button title={'Set Message'} onPress={handlePress} />
       <Button title={'Set Otro mensaje'} onPress={handlePress2} />
-      <Users />
+      {/* <Users /> */}
+      <Factura />
     </View>
   );
 };
