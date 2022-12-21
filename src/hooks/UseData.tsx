@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import Queries from '../gql/Queries';
+import Queries from '../common/gql/Queries';
 
 const UseData = () => {
   const GET_FACTURAS = Queries();

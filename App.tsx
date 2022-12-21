@@ -1,7 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { ConfigStorage } from './src/redux/storage/ConfigStore';
-import { MainScreen } from './src/screens/MainScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import 'react-native-gesture-handler';
 
 import {
   ApolloClient,
@@ -10,6 +11,7 @@ import {
   HttpLink,
 } from '@apollo/client';
 import fetch from 'cross-fetch';
+import { StackNavigation } from './src/navigation/StackNavigations';
 
 // Initialize Apollo Client
 const token =
@@ -30,7 +32,9 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <Provider store={ConfigStorage}>
-        <MainScreen />
+        <NavigationContainer>
+          <StackNavigation />
+        </NavigationContainer>
       </Provider>
     </ApolloProvider>
   );

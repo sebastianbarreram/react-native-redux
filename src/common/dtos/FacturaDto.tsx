@@ -1,5 +1,5 @@
 import { DetalleFacturaGetDto } from './DetallefacturaGetDto';
-export interface FacturaGetDto {
+export interface FacturaDto {
   id: number;
 
   clienteNombre: string;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import UseData from '../hooks/UseData';
-import { FacturaGetDto } from '../common/dtos/FacturaGetDto';
+import { FacturaDto } from '../common/dtos/FacturaDto';
 import TableRow from './TableRow';
 
 const Factura = () => {
@@ -26,7 +26,7 @@ const Factura = () => {
         </React.Fragment>
       )}
       {data !== undefined &&
-        data.data.map((factura: FacturaGetDto) => {
+        data.data.map((factura: FacturaDto) => {
           counter = counter + 1;
           return (
             <TableRow

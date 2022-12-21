@@ -1,4 +1,4 @@
-import { FacturaGetDto } from './FacturaGetDto';
+import { FacturaDto } from './FacturaDto';
 
 export interface DetalleFacturaGetDto {
   id: number;
@@ -13,5 +13,5 @@ export interface DetalleFacturaGetDto {
 
   total: number;
 
-  factura: FacturaGetDto;
+  factura: FacturaDto;
 }
