@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import UseData from '../hooks/UseData';
 import { FacturaGetDto } from '../common/dtos/FacturaGetDto';
 import TableRow from './TableRow';
@@ -23,9 +23,6 @@ const Factura = () => {
       {loading && (
         <React.Fragment>
           <ActivityIndicator size="large" />
-          <View>
-            <Text>Please wait...</Text>
-          </View>
         </React.Fragment>
       )}
       {data !== undefined &&
