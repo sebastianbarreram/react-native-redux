@@ -10,8 +10,9 @@ export const StackNavigation = () => {
     <Stack.Navigator
       initialRouteName="Main"
       screenOptions={{
-        gestureEnabled: true,
-        headerShown: false,
+        headerMode: 'float',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'tomato' },
       }}>
       <Stack.Screen name="Form" component={FormScreen} />
       <Stack.Screen name="Main" component={MainScreen} />
