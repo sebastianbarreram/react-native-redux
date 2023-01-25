@@ -12,6 +12,8 @@ import TableRow from './TableRow';
 
 const Factura = () => {
   const { GetAllFacturas } = UseData();
+  const result = GetAllFacturas();
+  console.log('result :>> ', result);
   const { loading, error, data } = GetAllFacturas();
   console.log('loading', loading);
   console.log('error', error);

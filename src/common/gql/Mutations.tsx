@@ -7,13 +7,6 @@ const Mutations = () => {
         id
         clienteNombre
         clienteCorreo
-        detalleFactura {
-          id
-          producto
-          precio
-          cantidad
-          total
-        }
       }
     }
   `;

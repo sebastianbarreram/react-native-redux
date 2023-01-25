@@ -1,10 +1,38 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import React, { useState } from 'react';
 import InputTextContainer from '../components/InputText';
+import Mutations from '../common/gql/Mutations';
+import { useMutation } from '@apollo/client';
+import Queries from '../common/gql/Queries';
 
 const FormScreen = () => {
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
+  const GET_FACTURAS = Queries();
+  const CREATE_FACTURA = Mutations();
+  const [createFactura, newFactura] = useMutation(CREATE_FACTURA, {
+    refetchQueries: [GET_FACTURAS],
+  });
+
+  const handleCrear = () => {
+    console.log('nameInput :>> ', nameInput);
+    console.log('emailInput :>> ', emailInput);
+    createFactura({
+      variables: {
+        factura: {
+          clienteNombre: nameInput,
+          clienteCorreo: emailInput,
+        },
+      },
+    })
+      .then(res => console.log('res', res))
+      .catch(err => console.log('err', err.mes));
+    console.log('data', newFactura.data);
+    console.log('loading :>> ', newFactura.loading);
+    console.log('error', newFactura.error?.graphQLErrors[0].extensions);
+    setNameInput('');
+    setEmailInput('');
+  };
 
   return (
     <View style={styles.container}>
@@ -20,6 +48,9 @@ const FormScreen = () => {
         handleOnChange={setEmailInput}
         value={emailInput}
       />
+      <TouchableOpacity style={styles.button} onPress={() => handleCrear()}>
+        <Text style={styles.buttonText}>Crear</Text>
+      </TouchableOpacity>
     </View>
   );
 };
